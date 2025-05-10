@@ -1,0 +1,15 @@
+# Ignorar dados brutos
+dados/brutos/
+
+# Ignorar ambiente virtual
+.venv/
+
+# Ignorar arquivos temporários do Python
+__pycache__/
+*.pyc
+
+# Ignorar arquivos do macOS
+.DS_Store
+
+# Ignorar modelos treinados
+modelos/*.pkl

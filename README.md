@@ -14,12 +14,12 @@ Desenvolver um MVP que utilize dados históricos da empresa para prever a compat
 
 ## Estrutura do Projeto
 
-- `data/`: arquivos de dados brutos e tratados
+- `dados/`: arquivos de dados brutos e tratados
 - `notebooks/`: notebooks com análises exploratórias e testes
 - `src/`: código-fonte principal para pré-processamento, modelagem e utilitários
 - `app/`: aplicação desenvolvida em Streamlit
-- `models/`: modelos treinados salvos no formato `.pkl`
-- `tests/`: testes unitários (caso aplicável)
+- `modelos/`: modelos treinados salvos no formato `.pkl`
+- `testes/`: testes unitários (caso aplicável)
 - `README.md`: documentação do projeto
 - `requirements.txt`: lista de dependências do projeto
 
@@ -39,3 +39,28 @@ Clone o repositório e instale os pacotes necessários com o seguinte comando:
 
 ```bash
 pip install -r requirements.txt
+
+### 📦 Acesso ao dataset tratado
+
+O arquivo `prospeccao_consolidada.parquet` contém os dados integrados e normalizados a partir das fontes `candidatos.json`, `vagas.json` e `prospeccoes.json`.
+
+> Tamanho aproximado: 130 MB  
+> Acesso público via Google Drive
+
+🔗 [Clique aqui para visualizar no Google Drive](https://drive.google.com/file/d/1eQ2TWeGqssR9ImxQw8y83xGl23_o4UN_/view?usp=sharing)
+
+---
+
+### 📥 Como carregar no Google Colab
+
+```python
+import pandas as pd
+
+# Link direto para leitura do parquet
+url = "https://drive.google.com/uc?id=1eQ2TWeGqssR9ImxQw8y83xGl23_o4UN_"
+
+# Carregando com pyarrow
+df = pd.read_parquet(url, engine='pyarrow')
+
+# Visualizar amostra
+df.head()

@@ -1,6 +1,10 @@
 # Ignorar dados brutos
 dados/brutos/
 
+# Ignorar arquivos tratados grandes (parquet, csv, etc)
+dados/tratados/*.parquet
+dados/tratados/*.csv
+
 # Ignorar ambiente virtual
 .venv/
 
